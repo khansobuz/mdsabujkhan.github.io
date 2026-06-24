@@ -1,242 +1,247 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MD SABUJ KHAN - Ph.D. Profile</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #ffffff;
-      color: #222;
-      line-height: 1.7;
-    }
-    .layout {
-      display: flex;
-      min-height: 100vh;
-    }
-    aside.sidebar {
-      width: 250px;
-      background: #f5f5f5;
-      padding: 30px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
-    }
-    .profile-pic {
-      width: 120px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
-    aside h2 {
-      margin: 0;
-      font-size: 1.6rem;
-      text-align: center;
-    }
-    aside p {
-      margin: 6px 0;
-      font-size: 0.95rem;
-      text-align: center;
-    }
-    .sidebar-links a {
-      display: block;
-      margin: 6px 0;
-      color: #1a73e8;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-    main.content {
-      flex: 1;
-      padding: 40px 30px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    h2 {
-      border-bottom: 2px solid #e5e5e5;
-      padding-bottom: 6px;
-      margin-bottom: 18px;
-      font-size: 1.6rem;
-      font-weight: 600;
-    }
-    .section {
-      margin-bottom: 40px;
-    }
-    .publication {
-      margin-bottom: 20px;
-      padding: 15px;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      transition: box-shadow 0.3s;
-    }
-    .publication:hover {
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-    .publication h3 {
-      margin: 0 0 6px 0;
-      font-size: 1.1rem;
-      color: #1a73e8;
-    }
-    .publication p {
-      margin: 4px 0;
-      font-size: 0.95rem;
-      color: #555;
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      margin-top: 40px;
-      background: #f5f5f5;
-      font-size: 0.9rem;
-    }
-    .research-experience {
-      margin-bottom: 40px;
-    }
-    .research-experience p {
-      text-align: justify;
-      margin: 10px 0;
-    }
-  </style>
-</head>
-<body>
-  <div class="layout">
-    <aside class="sidebar">
-      <img src="your-photo.png" alt="Profile Photo" class="profile-pic" />
-      <h2>MD SABUJ KHAN</h2>
-      <p class="role">Ph.D. Student · Software Engineering</p>
-      <p class="location">Chengdu, Sichuan, China</p>
-      <div class="sidebar-links">
-        <a href="mailto:Khansobuz203@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/khan-sobuz-77355518a">LinkedIn</a>
-        <a href="https://scholar.google.com/citations?user=zWlFjZgAAAAJ&hl=en">Google Scholar</a>
-        <a href="https://github.com/khansobuz">GitHub</a>
-        <p>WeChat: khansobuz</p>
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans, 'Segoe UI', sans-serif); background: var(--color-background-tertiary); color: var(--color-text-primary); }
+  .wrap { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; gap: 0; }
+  .sidebar { background: var(--color-background-primary); border-right: 0.5px solid var(--color-border-tertiary); padding: 2rem 1.5rem; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+  .avatar { width: 96px; height: 96px; border-radius: 50%; background: #E6F1FB; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 500; color: #0C447C; margin: 0 auto 1rem; border: 0.5px solid var(--color-border-tertiary); }
+  .sidebar-name { font-size: 17px; font-weight: 500; text-align: center; color: var(--color-text-primary); }
+  .sidebar-role { font-size: 13px; color: var(--color-text-secondary); text-align: center; margin-top: 4px; }
+  .sidebar-inst { font-size: 12px; color: var(--color-text-tertiary); text-align: center; margin-top: 2px; }
+  .sidebar-loc { display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 12px; color: var(--color-text-tertiary); margin-top: 6px; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.25rem 0; }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 1.25rem; }
+  .stat-box { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px 8px; text-align: center; }
+  .stat-num { font-size: 20px; font-weight: 500; color: var(--color-text-primary); }
+  .stat-lbl { font-size: 10px; color: var(--color-text-tertiary); margin-top: 2px; line-height: 1.3; }
+  .sidebar-section-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-tertiary); margin-bottom: 8px; }
+  .link-row { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 13px; color: var(--color-text-secondary); text-decoration: none; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .link-row:last-child { border-bottom: none; }
+  .link-row i { font-size: 15px; color: #185FA5; }
+  .link-row:hover { color: var(--color-text-info); }
+  .interest-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-size: 11px; padding: 3px 9px; border-radius: 20px; background: #E6F1FB; color: #0C447C; border: 0.5px solid #B5D4F4; }
+  .main { padding: 2rem 2.5rem; max-width: 860px; }
+  .section { margin-bottom: 2.5rem; }
+  .section-title { font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-text-tertiary); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
+  .section-title::after { content: ''; flex: 1; height: 0.5px; background: var(--color-border-tertiary); }
+  .about-text { font-size: 14px; line-height: 1.75; color: var(--color-text-secondary); }
+  .edu-item { display: flex; gap: 1rem; margin-bottom: 1.25rem; }
+  .edu-dot { width: 10px; height: 10px; border-radius: 50%; background: #378ADD; flex-shrink: 0; margin-top: 5px; }
+  .edu-deg { font-size: 14px; font-weight: 500; }
+  .edu-inst { font-size: 13px; color: var(--color-text-secondary); }
+  .edu-year { font-size: 12px; color: var(--color-text-tertiary); margin-top: 2px; }
+  .pub-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 0.875rem; transition: border-color 0.15s; }
+  .pub-card:hover { border-color: var(--color-border-secondary); }
+  .pub-title { font-size: 14px; font-weight: 500; color: #185FA5; text-decoration: none; line-height: 1.5; display: block; margin-bottom: 5px; }
+  .pub-title:hover { text-decoration: underline; }
+  .pub-authors { font-size: 12px; color: var(--color-text-tertiary); margin-bottom: 6px; }
+  .pub-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .pub-venue { font-size: 12px; color: var(--color-text-secondary); font-style: italic; flex: 1; min-width: 0; }
+  .badge { font-size: 11px; padding: 2px 8px; border-radius: 20px; white-space: nowrap; font-weight: 500; }
+  .badge-cite { background: #EAF3DE; color: #3B6D11; border: 0.5px solid #C0DD97; }
+  .badge-if { background: #FAEEDA; color: #633806; border: 0.5px solid #FAC775; }
+  .badge-if-high { background: #E1F5EE; color: #085041; border: 0.5px solid #9FE1CB; }
+  .badge-year { background: var(--color-background-secondary); color: var(--color-text-secondary); border: 0.5px solid var(--color-border-tertiary); }
+  .pub-loading { font-size: 13px; color: var(--color-text-tertiary); padding: 1rem; text-align: center; }
+  .scholar-note { font-size: 11px; color: var(--color-text-tertiary); display: flex; align-items: center; gap: 5px; margin-bottom: 1rem; }
+  .refresh-btn { font-size: 11px; padding: 3px 10px; border-radius: 20px; background: transparent; border: 0.5px solid var(--color-border-secondary); color: var(--color-text-secondary); cursor: pointer; display: flex; align-items: center; gap: 4px; }
+  .refresh-btn:hover { background: var(--color-background-secondary); }
+  .exp-item { margin-bottom: 1.25rem; padding-left: 1rem; border-left: 2px solid var(--color-border-tertiary); }
+  .exp-title { font-size: 14px; font-weight: 500; }
+  .exp-org { font-size: 13px; color: var(--color-text-secondary); }
+  .exp-date { font-size: 11px; color: var(--color-text-tertiary); margin-top: 2px; }
+</style>
+
+<div class="wrap">
+  <aside class="sidebar">
+    <div class="avatar">MSK</div>
+    <div class="sidebar-name">Md Sabuj Khan</div>
+    <div class="sidebar-role">Ph.D. Candidate · Software Engineering</div>
+    <div class="sidebar-inst">UESTC, Chengdu, China</div>
+    <div class="sidebar-loc"><i class="ti ti-map-pin" aria-hidden="true" style="font-size:13px"></i>Chengdu, Sichuan</div>
+    <hr class="divider">
+    <div class="stats-grid">
+      <div class="stat-box"><div class="stat-num" id="stat-papers">6</div><div class="stat-lbl">Papers</div></div>
+      <div class="stat-box"><div class="stat-num" id="stat-cites">31</div><div class="stat-lbl">Citations</div></div>
+      <div class="stat-box"><div class="stat-num" id="stat-h">3</div><div class="stat-lbl">h-index</div></div>
+    </div>
+    <hr class="divider">
+    <div class="sidebar-section-label">Links</div>
+    <a class="link-row" href="mailto:Khansobuz203@gmail.com"><i class="ti ti-mail" aria-hidden="true"></i>Email</a>
+    <a class="link-row" href="https://scholar.google.com/citations?user=zWlFjZgAAAAJ&hl=en" target="_blank"><i class="ti ti-school" aria-hidden="true"></i>Google Scholar</a>
+    <a class="link-row" href="https://github.com/khansobuz" target="_blank"><i class="ti ti-brand-github" aria-hidden="true"></i>GitHub</a>
+    <a class="link-row" href="https://www.linkedin.com/in/khan-sobuz-77355518a" target="_blank"><i class="ti ti-brand-linkedin" aria-hidden="true"></i>LinkedIn</a>
+    <hr class="divider">
+    <div class="sidebar-section-label" style="margin-bottom:10px">Research interests</div>
+    <div class="interest-tags">
+      <span class="tag">Biometric Security</span>
+      <span class="tag">Deep Learning</span>
+      <span class="tag">Generative Models</span>
+      <span class="tag">Cancelable Templates</span>
+      <span class="tag">Anomaly Detection</span>
+      <span class="tag">Image Processing</span>
+    </div>
+  </aside>
+
+  <main class="main">
+    <section class="section">
+      <div class="section-title">About</div>
+      <p class="about-text">Ph.D. student in Software Engineering at UESTC, supervised at the Intelligent Computing and Data Mining Lab. My work centers on biometric template protection — designing cancelable, privacy-preserving representations of fingerprints, palmprints, and multimodal biometrics using deep attention architectures and cryptographic hashing. I also work on video anomaly detection and adversarial machine learning.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Education</div>
+      <div class="edu-item"><div class="edu-dot"></div><div><div class="edu-deg">Ph.D. in Software Engineering</div><div class="edu-inst">University of Electronic Science and Technology of China (UESTC)</div><div class="edu-year">2024 – 2028</div></div></div>
+      <div class="edu-item"><div class="edu-dot"></div><div><div class="edu-deg">M.Sc. in Computer Science & Technology</div><div class="edu-inst">University of Jinan</div><div class="edu-year">2021 – 2024 · CGPA 87%</div></div></div>
+      <div class="edu-item"><div class="edu-dot" style="background:#9FE1CB"></div><div><div class="edu-deg">B.Sc. in Software Engineering</div><div class="edu-inst">Sichuan University</div><div class="edu-year">2017 – 2021 · CGPA 3.75/4.00</div></div></div>
+    </section>
+
+    <section class="section">
+      <div class="section-title" style="justify-content:space-between; gap:0;">
+        <span style="display:flex;align-items:center;gap:8px">Publications
+          <span class="scholar-note"><i class="ti ti-info-circle" aria-hidden="true" style="font-size:13px"></i>IF data sourced from journal records</span>
+        </span>
+        <button class="refresh-btn" onclick="renderPubs()"><i class="ti ti-refresh" aria-hidden="true" style="font-size:13px"></i>Refresh</button>
       </div>
-    </aside>
-    <main class="content">
-      <section class="section">
-        <h2>About Me</h2>
-        <p>I am a Ph.D. student in Software Engineering at the University of Electronic Science and Technology of China (UESTC). My research focuses on biometric security, deep generative models, and deep learning for intelligent computing applications. I am dedicated to producing impactful research and advancing practical solutions in security and software engineering.</p>
-      </section>
-      <section class="section research-experience">
-        <h2>Research Interests & Experience</h2>
-        <p>My primary research interests are in <strong>Biometric Security, Deep Generative Models, and Deep Learning</strong>. I actively develop secure and privacy-preserving systems, design innovative algorithms for anomaly detection and image/video analysis, and contribute to state-of-the-art adversarial machine learning research.</p>
-        <p>Throughout my research career, I have conducted projects in deep learning, image processing, and biometric security, supervised undergraduate research, and collaborated on publications that bridge theoretical insights with practical applications.</p>
-      </section>
-      <section class="section">
-        <h2>Education</h2>
-        <ul>
-          <li><strong>Ph.D. in Software Engineering</strong><br>University of Electronic Science and Technology of China (UESTC), 2024–2028</li>
-          <li><strong>M.Sc. in Computer Science & Technology</strong><br>University of Jinan, 2021–2024 · CGPA: 87%</li>
-          <li><strong>B.Sc. in Software Engineering</strong><br>Sichuan University, 2017–2021 · CGPA: 3.75/4.00</li>
-        </ul>
-      </section>
-      <section class="section">
-        <h2>Work Experience</h2>
-        <ul>
-          <li><strong>Assistant Researcher</strong> - Intelligent Computing and Data Mining Lab, Chengdu, China · 01/09/2024 - Current<br>
-          • Conduct research in Deep Learning, Anomaly Detection in Surveillance Videos, and Image Processing.<br>
-          • Work on Deep Learning and Image Processing for Biometric Security.<br>
-          • Supervise undergraduate thesis and contribute to research paper writing.</li>
+      <div id="pub-list"></div>
+    </section>
 
-          <li><strong>Deep Learning Engineer Intern</strong> - Chengdian Jinyuan Technology Co., Ltd., Chengdu, China · 10/01/2024 - 28/02/2025<br>
-          • Implement and optimize deep learning algorithms and improve model performance.<br>
-          • Apply face detection from video clips, enhance video quality, and beautify faces.</li>
+    <section class="section">
+      <div class="section-title">Experience</div>
+      <div class="exp-item">
+        <div class="exp-title">Assistant Researcher</div>
+        <div class="exp-org">Intelligent Computing and Data Mining Lab · UESTC</div>
+        <div class="exp-date">Sep 2024 – Present · Chengdu, China</div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Deep Learning Engineer Intern</div>
+        <div class="exp-org">Chengdian Jinyuan Technology Co., Ltd.</div>
+        <div class="exp-date">Jan 2024 – Feb 2025 · Chengdu, China</div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Research Assistant – Biometric Security</div>
+        <div class="exp-org">University of Jinan</div>
+        <div class="exp-date">Sep 2022 – Jul 2024</div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Teaching Assistant · Signals & Systems</div>
+        <div class="exp-org">University of Jinan</div>
+        <div class="exp-date">Sep 2023 – Dec 2023</div>
+      </div>
+      <div class="exp-item" style="border-left-color:var(--color-border-secondary)">
+        <div class="exp-title">Software Engineering Intern</div>
+        <div class="exp-org">Chengdu Sunscape Data Co. Ltd.</div>
+        <div class="exp-date">Feb 2021 – Apr 2022</div>
+      </div>
+    </section>
+  </main>
+</div>
 
-          <li><strong>Research Assistant – Biometric Security</strong> - University of Jinan, China · 01/09/2022 - 15/07/2024<br>
-          • Conduct research on biometric protection attacks using deep learning.<br>
-          • Develop and optimize deep learning models for biometric security and attack detection.<br>
-          • Collaborate on publishing research and advancing biometric protection technologies.</li>
+<script>
+const pubs = [
+  {
+    authors: "MS Khan, H Li, C Zhao",
+    title: "Deep secure PalmNet: A novel cancelable palmprint template protection scheme with deep attention net and randomized hashing security mechanism",
+    venue: "Computers & Security",
+    vol: "vol. 142, 103863",
+    year: 2024,
+    doi: "https://doi.org/10.1016/j.cose.2024.103863",
+    cites: 16,
+    if: 4.8,
+    ifHigh: false
+  },
+  {
+    authors: "MS Khan, H Li, Y Sun, C Zhao",
+    title: "Cancelable fingerprint template protection based on random quantization and improved bloom filter",
+    venue: "Multimedia Tools and Applications",
+    vol: "vol. 84(17), 17547–17579",
+    year: 2025,
+    doi: "https://doi.org/10.1007/s11042-024-19692-w",
+    cites: 7,
+    if: 3.6,
+    ifHigh: false
+  },
+  {
+    authors: "MS Khan, T Zhong, F Zhou, H Li",
+    title: "Secure and cancelable fingerprint templates with privacy-preserving mapping and template encoding",
+    venue: "Journal of Information Security and Applications",
+    vol: "vol. 93, 104126",
+    year: 2025,
+    doi: "https://doi.org/10.1016/j.jisa.2025.104126",
+    cites: 5,
+    if: 5.6,
+    ifHigh: true
+  },
+  {
+    authors: "Y Liu, K Li, MS Khan, J Lang, R Hong, K Zhang, F Zhou",
+    title: "COMMANDing anomalies: Continual video anomaly detection via dual-memory and temporal Mamba modeling",
+    venue: "Neurocomputing",
+    vol: "132943",
+    year: 2026,
+    doi: null,
+    cites: 2,
+    if: 6.0,
+    ifHigh: true
+  },
+  {
+    authors: "MS Khan, T Zhong, H Li, F Zhou",
+    title: "Multimodal biometric recognition with cancelable template protection using deep learning and an optimized bloom filter",
+    venue: "Applied Intelligence",
+    vol: "vol. 56(1), 6",
+    year: 2026,
+    doi: null,
+    cites: 1,
+    if: 5.3,
+    ifHigh: true
+  },
+  {
+    authors: "MS Khan, T Zhong, H Li, F Zhou, M Zamir",
+    title: "A uni-factor cancelable palmprint recognition scheme with deep sight network and key-indexed template encoding mechanism",
+    venue: "Information Sciences",
+    vol: "",
+    year: 2026,
+    doi: null,
+    cites: 0,
+    if: 8.1,
+    ifHigh: true
+  }
+];
 
-          <li><strong>Teaching Assistant</strong> - University of Jinan, China · 05/09/2023 - 15/12/2023<br>
-          • Taught practical experiments in the Signals & Systems curriculum.<br>
-          • Facilitated hands-on learning to reinforce theoretical concepts.</li>
+function renderPubs() {
+  const list = document.getElementById('pub-list');
+  list.innerHTML = '';
+  pubs.sort((a,b) => b.year - a.year || b.cites - a.cites);
+  pubs.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.className = 'pub-card';
+    const titleEl = p.doi
+      ? `<a class="pub-title" href="${p.doi}" target="_blank">${p.title} <i class="ti ti-external-link" aria-hidden="true" style="font-size:11px;vertical-align:1px"></i></a>`
+      : `<span class="pub-title" style="color:var(--color-text-primary);cursor:default">${p.title}</span>`;
+    const ifClass = p.ifHigh ? 'badge-if-high' : 'badge-if';
+    const citeBadge = p.cites > 0 ? `<span class="badge badge-cite"><i class="ti ti-quote" aria-hidden="true" style="font-size:10px;vertical-align:1px"></i> ${p.cites} citations</span>` : '';
+    const ifBadge = `<span class="badge ${ifClass}">IF ${p.if}</span>`;
+    const yearBadge = `<span class="badge badge-year">${p.year}</span>`;
+    const venueStr = p.vol ? `${p.venue}, ${p.vol}` : p.venue;
+    card.innerHTML = `
+      ${titleEl}
+      <div class="pub-authors">${p.authors}</div>
+      <div class="pub-meta">
+        <span class="pub-venue">${venueStr}</span>
+        ${yearBadge}
+        ${ifBadge}
+        ${citeBadge}
+      </div>`;
+    list.appendChild(card);
+  });
+}
 
-          <li><strong>Software Engineering Intern</strong> - Chengdu Sunscape Data Co. Ltd., Chengdu, China · 15/02/2021 - 01/04/2022<br>
-          • Trained in web application development. Led B2C Hotel Booking System project.<br>
-          • Proficient in front-end (HTML5, CSS3, JavaScript) and back-end (PHP, MySQL).</li>
-        </ul>
-      </section>
- </section>
-<section class="section">
-  <h2>Publications</h2>
+renderPubs();
 
-  <div class="publication">
-    <h3>
-      MS Khan, H Li, C Zhao. 
-      <em>
-        <a href="https://doi.org/10.1016/j.cose.2024.103863" target="_blank">
-          Deep secure PalmNet: A novel cancelable palmprint template protection scheme with deep attention net and randomized hashing security mechanism
-        </a>
-      </em>
-    </h3>
-    <p>Computers & Security 142, 103863 (2024) — Cited by 16</p>
-  </div>
-
-  <div class="publication">
-    <h3>
-      MS Khan, H Li, Y Sun, C Zhao. 
-      <em>
-        <a href="https://doi.org/10.1007/s11042-024-19692-w" target="_blank">
-          Cancelable fingerprint template protection based on random quantization and improved bloom filter
-        </a>
-      </em>
-    </h3>
-    <p>Multimedia Tools and Applications 84(17), 17547–17579 (2025) — Cited by 7</p>
-  </div>
-
-  <div class="publication">
-    <h3>
-      MS Khan, T Zhong, F Zhou, H Li. 
-      <em>
-        <a href="https://doi.org/10.1016/j.jisa.2025.104126" target="_blank">
-          Secure and cancelable fingerprint templates with privacy-preserving mapping and template encoding
-        </a>
-      </em>
-    </h3>
-    <p>Journal of Information Security and Applications 93, 104126 (2025) — Cited by 5</p>
-  </div>
-
-  <div class="publication">
-    <h3>
-      Y Liu, K Li, MS Khan, J Lang, R Hong, K Zhang, F Zhou. 
-      <em>
-        COMMANDing anomalies: Continual video anomaly detection via dual-memory and temporal Mamba modeling
-      </em>
-    </h3>
-    <p>Neurocomputing, 132943 (2026) — Cited by 2</p>
-  </div>
-
-  <div class="publication">
-    <h3>
-      MS Khan, T Zhong, H Li, F Zhou. 
-      <em>
-        Multimodal biometric recognition with cancelable template protection using deep learning and an optimized bloom filter
-      </em>
-    </h3>
-    <p>Applied Intelligence 56(1), 6 (2026) — Cited by 1</p>
-  </div>
-
-  <div class="publication">
-    <h3>
-      MS Khan, T Zhong, H Li, F Zhou, M Zamir. 
-      <em>
-        A uni-factor cancelable palmprint recognition scheme with deep sight network and key-indexed template encoding mechanism
-      </em>
-    </h3>
-    <p>Information Sciences (2026)</p>
-  </div>
-
-</section>
-
-      </section>
-    </main>
-  </div>
-  <footer>
-    © 2025 MD SABUJ KHAN · All Rights Reserved
-  </footer>
-</body>
-</html>
-
-
+let total = pubs.reduce((s,p) => s + p.cites, 0);
+document.getElementById('stat-cites').textContent = total;
+document.getElementById('stat-papers').textContent = pubs.length;
+const sorted = [...pubs].sort((a,b)=>b.cites-a.cites);
+let h=0; for(let i=0;i<sorted.length;i++){ if(sorted[i].cites>=i+1) h=i+1; else break; }
+document.getElementById('stat-h').textContent = h;
+</script>
