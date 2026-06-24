@@ -231,7 +231,7 @@
 
   <!-- ── Sidebar ── -->
   <aside>
-    <img src="your-photo.png" alt="Md Sabuj Khan" style="width:90px;height:90px;border-radius:50%;object-fit:cover;border:1px solid #B5D4F4;display:block;margin:0 auto 1rem;">
+    <div class="avatar">MSK</div>
     <div class="s-name">Md Sabuj Khan</div>
     <div class="s-role">Ph.D. Candidate · Software Engineering</div>
     <div class="s-inst">UESTC, Chengdu, China</div>
@@ -324,19 +324,6 @@
       </div>
     </section>
 
-    <!-- Publications -->
-    <section class="sec">
-      <div class="sec-title">Publications</div>
-      <div class="pub-toolbar">
-        <span class="pub-status" id="pub-status">Loading from Semantic Scholar…</span>
-        <button class="refresh-btn" onclick="loadPubs(true)">
-          <svg id="refresh-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 4v6h6"/><path d="M23 20v-6h-6"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>
-          Refresh
-        </button>
-      </div>
-      <div id="pub-list"><div class="pub-loading">Fetching publications…</div></div>
-    </section>
-
     <!-- Experience -->
     <section class="sec">
       <div class="sec-title">Experience</div>
@@ -368,6 +355,20 @@
         </div>
       </div>
     </section>
+
+    <!-- Publications -->
+    <section class="sec">
+      <div class="sec-title">Publications</div>
+      <div class="pub-toolbar">
+        <span class="pub-status" id="pub-status">Loading from Semantic Scholar…</span>
+        <button class="refresh-btn" onclick="loadPubs(true)">
+          <svg id="refresh-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 4v6h6"/><path d="M23 20v-6h-6"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>
+          Refresh
+        </button>
+      </div>
+      <div id="pub-list"><div class="pub-loading">Fetching publications…</div></div>
+    </section>
+
 
   </main>
 </div>
@@ -491,7 +492,7 @@ function renderPubs(pubs) {
 // ── Fetch from Semantic Scholar by author ID ─────────────────────────────────
 // Your Semantic Scholar author ID (search at semanticscholar.org/me)
 // Below is a best-guess ID; replace with your confirmed one.
-const SS_AUTHOR_ID = '2177643745';
+const SS_AUTHOR_ID = '2297635740';
 
 async function loadPubs(force = false) {
   const icon = document.getElementById('refresh-icon');
